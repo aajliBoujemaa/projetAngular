@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pc",
+      "price": 100,
+      "checked": false
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 200,
+      "checked": true
+    },
+    {
+      "id": 3,
+      "name": "Phone",
+      "price": 300,
+      "checked": true
+    },
+    {
+      "id": 4,
+      "name": "Pint",
+      "price": 400,
+      "checked": true
+    },
+    {
+      "id": 5,
+      "name": "Pince",
+      "price": 500,
+      "checked": false
+    },
+    {
+      "id": 6,
+      "name": "Ruler",
+      "price": 600,
+      "checked": false
+    },
+    {
+      "id": 7,
+      "name": "tablet",
+      "price": 700,
+      "checked": false
+    }
+  ]
+}

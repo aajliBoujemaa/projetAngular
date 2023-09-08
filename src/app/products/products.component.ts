@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-products',
@@ -7,20 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private httpClient: HttpClient) { }
+  products : Array<any> = [
+  ];
   ngOnInit(): void {
+    this.getProducts();
+  }
+  handleCheckProduct(product: any) {
+    this.httpClient.patch<any>(`http://localhost:8089/products/${product.id}`,{checked:!product.checked})
+      .subscribe({
+        next : updatedProduct => {
+          product.checked = !product.checked;
+          //this.getProducts();
+        }
+      })
+
   }
 
-  products : Array<any> = [
-    {id:1,name:"PC",price:100,checked:false},
-    {id:2,name:"Stylo",price:200,checked:true},
-    {id:3,name:"Regle",price:300,checked:false},
-    {id:4,name:"Gomme",price:400,checked:true},
-    {id:5,name:"Cahier",price:500,checked:false}
-  ];
-
-  handleCheckProduct(product: any) {
-    product.checked = !product.checked;
+  getProducts(){
+    this.httpClient.get<Array<any>>("http://localhost:8089/products").subscribe({
+      next : data => {
+        this.products = data
+      },
+      error : err => {
+        console.log(err)
+      }
+    })
   }
 }
