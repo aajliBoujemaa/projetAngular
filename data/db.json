@@ -16,31 +16,13 @@
       "id": 3,
       "name": "Phone",
       "price": 300,
-      "checked": true
+      "checked": false
     },
     {
       "id": 4,
       "name": "Pint",
       "price": 400,
       "checked": true
-    },
-    {
-      "id": 5,
-      "name": "Pince",
-      "price": 500,
-      "checked": false
-    },
-    {
-      "id": 6,
-      "name": "Ruler",
-      "price": 600,
-      "checked": false
-    },
-    {
-      "id": 7,
-      "name": "tablet",
-      "price": 700,
-      "checked": false
     }
   ]
 }

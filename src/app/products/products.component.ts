@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ProductService} from "../serivces/product.service";
+import {Product} from "../model/product.model";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-products',
@@ -8,15 +11,14 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
-  products : Array<any> = [
-  ];
+  constructor(private productService : ProductService) { }
+  products : Array<Product> = [];
+  //products$ !: Observable<Array<Product>>;
   ngOnInit(): void {
     this.getProducts();
   }
-  handleCheckProduct(product: any) {
-    this.httpClient.patch<any>(`http://localhost:8089/products/${product.id}`,{checked:!product.checked})
-      .subscribe({
+  handleCheckProduct(product: Product) {
+    this.productService.checkProduct(product).subscribe({
         next : updatedProduct => {
           product.checked = !product.checked;
           //this.getProducts();
@@ -25,8 +27,13 @@ export class ProductsComponent implements OnInit {
 
   }
 
+  /*
   getProducts(){
-    this.httpClient.get<Array<any>>("http://localhost:8089/products").subscribe({
+   this.products =  this.productService.getProduct();
+  }*/
+
+  getProducts(){
+    this.productService.getProduct().subscribe({
       next : data => {
         this.products = data
       },
@@ -34,5 +41,14 @@ export class ProductsComponent implements OnInit {
         console.log(err)
       }
     })
+  }
+  handleDelete(product: Product) {
+    if(confirm("Etes vous sure ?"))
+    this.productService.deleteProduct(product).subscribe({
+      next: value => {
+        //this.getProducts();
+        this.products = this.products.filter(p=> p.id != product.id)
+      }
+    });
   }
 }
