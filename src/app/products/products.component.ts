@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  public keyword: string=""
   constructor(private productService : ProductService) { }
   products : Array<Product> = [];
   //products$ !: Observable<Array<Product>>;
@@ -33,7 +33,7 @@ export class ProductsComponent implements OnInit {
   }*/
 
   getProducts(){
-    this.productService.getProduct().subscribe({
+    this.productService.getProduct(2,3).subscribe({
       next : data => {
         this.products = data
       },
@@ -50,5 +50,15 @@ export class ProductsComponent implements OnInit {
         this.products = this.products.filter(p=> p.id != product.id)
       }
     });
+  }
+
+  searchProduct() {
+    this.productService.searchProduct(this.keyword).subscribe(
+      {
+        next : data=>{
+          this.products = data;
+        }
+      }
+    )
   }
 }
