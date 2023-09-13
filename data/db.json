@@ -4,37 +4,109 @@
       "id": 1,
       "name": "Pc",
       "price": 100,
-      "checked": true
+      "checked": false
     },
     {
       "id": 2,
       "name": "Printer",
       "price": 200,
-      "checked": true
+      "checked": false
     },
     {
       "id": 3,
       "name": "Phone",
       "price": 300,
-      "checked": true
+      "checked": false
     },
     {
       "id": 4,
       "name": "Pint",
       "price": 400,
-      "checked": true
+      "checked": false
     },
     {
       "name": "zz",
       "price": "034",
-      "checked": true,
+      "checked": false,
       "id": 7
     },
     {
       "name": "SSSSSSSSSS",
       "price": "3455",
-      "checked": true,
+      "checked": false,
       "id": 8
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "KKKKKK",
+      "price": "90988",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "DCIDCSDC",
+      "price": "9909090",
+      "checked": true,
+      "id": 10
     }
   ]
 }
