@@ -30,4 +30,8 @@ export class ProductService {
   getProductById(productId: number) :Observable<Product> {
     return this.httpClient.get<Product>(`http://localhost:8089/products/${productId}`)
   }
+
+  updateProduct(product: Product):Observable<Product>  {
+    return this.httpClient.put<Product>(`http://localhost:8089/products/${product.id}`,product)
+  }
 }

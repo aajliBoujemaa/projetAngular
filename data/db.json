@@ -8,8 +8,8 @@
     },
     {
       "id": 2,
-      "name": "Printer",
-      "price": 200,
+      "name": "Printer Page",
+      "price": "20090",
       "checked": false
     },
     {
